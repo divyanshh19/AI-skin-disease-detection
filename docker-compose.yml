@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/ml/saved_models:/app/ml/saved_models
+    environment:
+      - CNN_CHECKPOINT_PATH=/app/ml/saved_models/cnn_efficientnet_b0.pth
+      - VIT_CHECKPOINT_PATH=/app/ml/saved_models/vit_deit_tiny.pth
+      - ENSEMBLE_CONFIG_PATH=/app/ml/saved_models/ensemble_config.json
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
