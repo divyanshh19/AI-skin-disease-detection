@@ -1,10 +1,8 @@
-# SkinScan AI — Skin Disease Detection System
+# AI-Skin-Lesion-Detection ..
 
 CNN + Vision Transformer ensemble for classifying dermoscopic images across
 the 7 HAM10000 diagnostic categories, with Grad-CAM explainability, calibrated
 confidence scores, a FastAPI backend, and a React frontend.
-
-⚠ **Not a medical device.** For education/research only.
 
 ## Project layout
 
